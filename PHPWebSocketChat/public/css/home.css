@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: arial, sans-serif;
+    resize: none;
+}
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+body {
+    background-image: url(../images/background-image.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: yellow;
+    padding: 12px;
+    font-size: 20px;
+    display: flex;
+    z-index: 1;
+    box-shadow: 2px 3px 5px grey;
+}
+header img {
+    width: 3%;
+    object-fit: contain;
+}
+header nav h1 {
+    margin-left: 1rem;
+    margin-top: 0.7rem;
+}
+header .chatname {
+    margin-left: 25rem;
+}
+#wrapper {
+    position: relative;
+    margin: auto;
+    max-width: 1000px;
+    height: 100%;
+}
+#chat_output {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    width: 100%;
+    height: calc(100% - 100px);
+}
+#chat_input {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    width: 50%;
+    margin-left: 35rem;
+    margin-bottom: 2rem;
+    height: 37px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    position: fixed;
+}
+#chat_input:focus {
+    outline: none !important;
+    border: 1px solid royalblue;
+    box-shadow: 0 0 10px grey;
+}
+/* Dropdown */
+.dropbtn {
+    background-color: #4caf50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 35rem;
+    margin-top: 0.2rem;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
