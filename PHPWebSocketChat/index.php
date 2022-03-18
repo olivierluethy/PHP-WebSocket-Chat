@@ -2,6 +2,7 @@
 require 'core/bootstrap.php';
 
 $routes = [
+	'' => 'ChatController@login',
 	'/chat/login' => 'ChatController@login',
 	'/chat/logout' => 'ChatController@logout',
 
