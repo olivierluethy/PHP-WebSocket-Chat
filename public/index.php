@@ -15,6 +15,15 @@ require \dirname(__DIR__) . '/config/config.php';
 
 Session::start();
 
+// Sicherheits-Header. Content-Security-Policy erlaubt nur eigene Ressourcen und
+// den WebSocket-Endpunkt; das reduziert die Angriffsflaeche fuer XSS erheblich.
+$wsUrl = \App\Core\Config::wsPublicUrl();
+$wssUrl = str_starts_with($wsUrl, 'ws://') ? 'wss://' . substr($wsUrl, 5) : $wsUrl;
+header("Content-Security-Policy: default-src 'self'; connect-src 'self' {$wsUrl} {$wssUrl}; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'");
+header('X-Content-Type-Options: nosniff');
+header('X-Frame-Options: DENY');
+header('Referrer-Policy: same-origin');
+
 // Datenbank vorbereiten (idempotent).
 $pdo = Connection::pdo();
 Migrator::migrate($pdo);
