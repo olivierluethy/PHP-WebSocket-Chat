@@ -29,4 +29,12 @@ spl_autoload_register(static function (string $class) use ($rootDir): void {
     }
 });
 
+// Globaler Kurz-Helfer fuers Escaping in Templates.
+if (!function_exists('e')) {
+    function e(mixed $value): string
+    {
+        return \App\Core\View::e($value);
+    }
+}
+
 return $rootDir;
