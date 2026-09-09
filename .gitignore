@@ -1,0 +1,10 @@
+# Laufzeitdaten (SQLite-Datenbank und generiertes App-Secret)
+/data/*
+!/data/.gitkeep
+
+# Betriebssystem / Editor
+.DS_Store
+*.log
+
+# Falls je Composer genutzt wird
+/vendor/
